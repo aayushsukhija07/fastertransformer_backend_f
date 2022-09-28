@@ -68,7 +68,6 @@ RUN mkdir build -p && \
       .. && \
     make -j"$(grep -c ^processor /proc/cpuinfo)" install
 
-FROM ${BASE_IMAGE} as server
 
 ENV NCCL_LAUNCH_MODE=GROUP
 
