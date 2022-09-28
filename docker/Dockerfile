@@ -71,7 +71,6 @@ RUN mkdir build -p && \
 
 ENV NCCL_LAUNCH_MODE=GROUP
 
-COPY --from=server-builder /opt/tritonserver/backends/fastertransformer /opt/tritonserver/backends/fastertransformer
 
 # set workspace
 ENV WORKSPACE /workspace
@@ -103,4 +102,3 @@ RUN mkdir /var/run/sshd -p
 RUN ln -sf /usr/bin/python3.8 /usr/bin/python
 
 ADD . /workspace/fastertransformer_backend
-
