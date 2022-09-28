@@ -102,3 +102,4 @@ RUN mkdir /var/run/sshd -p
 RUN ln -sf /usr/bin/python3.8 /usr/bin/python
 
 ADD . /workspace/fastertransformer_backend
+ENTRYPOINT []
