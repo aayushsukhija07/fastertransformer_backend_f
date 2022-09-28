@@ -84,10 +84,7 @@ RUN   dpkg -i cuda-keyring_1.0-1_all.deb
 RUN pip3 install torch==1.9.1+cu111 -f https://download.pytorch.org/whl/torch_stable.html  && \
     pip3 install --extra-index-url https://pypi.ngc.nvidia.com regex fire ipywidgets tritonclient[all]
     
-RUN pip3 install \
-    jupyterhub \
-    notebook \
-    jupyterlab
+
     
 # for debug
 RUN apt-get update -q && \
@@ -102,4 +99,10 @@ RUN mkdir /var/run/sshd -p
 RUN ln -sf /usr/bin/python3.8 /usr/bin/python
 
 ADD . /workspace/fastertransformer_backend
+
+RUN pip3 install \
+    jupyterhub \
+    notebook \
+    jupyterlab
+    
 ENTRYPOINT []
